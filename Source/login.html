@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <title>Buy And Sell Corner | Login</title>
+</head>
+
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 bg-[#4C68FF]">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-[26px] text-white">Buy / Sell Corner</a>
+        </div>
+    </div>
+
+    <!-- Registration Section -->
+    <main class="flex-grow flex justify-center items-center px-2">
+        <div class="bg-[#F8EAEA] p-9 rounded-lg shadow-lg max-w-md w-full text-center mx-4">
+            <h2 class="text-2xl font-bold mb-6">LOGIN</h2>
+            <input type="email" placeholder="Enter Your Email" class="input input-bordered w-full mb-4"
+                id="login-email" />
+            <input type="password" placeholder="Enter Your Password" class="input input-bordered w-full mb-4"
+                id="login-password" />
+            <button class="btn bg-[#4C68FF] text-white w-full hover:bg-black" id="login-button">LOGIN</button>
+            <a href="./registration.html" class="block mt-4 text-[#4C68FF]">NOT A USER? PLEASE REGISTER FIRST</a>
+        </div>
+    </main>
+
+    <!-- For Showing Popup If User Not Put Any Details -->
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">Hello!</h3>
+            <p class="py-4 bold">Please Enter a Email And Password For Login!</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn hover:bg-black hover:text-white">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Javascript -->
+    <script type="module" src="./login.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <title>Buy And Sell Corner | Home</title>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 bg-[#4C68FF]">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-[26px] text-white">Buy / Sell Corner</a>
+        </div>
+        <div class="flex-none gap-2">
+            <div class="dropdown dropdown-end" id="userAvatar">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="Tailwind CSS Navbar component"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNa1JGLFIadWHMQ0KvIuKWYGl-cxLwGlI2WA&s"
+                            id="userImage" />
+                    </div>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li class="hover:bg-black hover:text-white"><a href="./Source/postAd.html">Post ad</a></li>
+                    <li class="hover:bg-black hover:text-white" id="logout-btn"><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Search Bar -->
+        <div class="mb-1">
+            <input type="text" placeholder="Search" class="input input-bordered w-full max-w-lg mx-auto block"
+                id="searchInput" />
+        </div>
+
+        <!-- Products Title -->
+        <h2 class="text-3xl font-bold text-center mb-3">Products</h2>
+
+        <!-- Products Cards Section -->
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <!-- Product cards will be Displayed here by Javascript -->
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script type="module" src="./index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

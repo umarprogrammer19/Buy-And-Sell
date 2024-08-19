@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy And Sell Corner | Post Ad</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="flex flex-col items-center min-h-screen">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 bg-[#4C68FF]">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-[26px] text-white">Buy / Sell Corner</a>
+        </div>
+        <div class="flex-none gap-2">
+            <div class="dropdown dropdown-end" id="userAvatar">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="Tailwind CSS Navbar component"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNa1JGLFIadWHMQ0KvIuKWYGl-cxLwGlI2WA&s"
+                            id="userImage" />
+                    </div>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li class="hover:bg-black hover:text-white"><a href="../index.html">Home</a></li>
+                    <li class="hover:bg-black hover:text-white" id="logout-btn"><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Ad Section -->
+    <div class="w-full max-w-lg p-5 bg-white shadow-md rounded-lg mx-auto mt-1">
+        <h1 class="text-3xl font-bold text-center mb-3">Post AD</h1>
+        <div class="flex justify-center mb-3">
+            <!-- Custom File Upload Section -->
+            <label for="fileInput"
+                class="custom-file-upload bg-[#4C68FF] w-full sm:w-3/4 md:w-2/3 lg:w-full p-10 text-center rounded-lg text-white relative cursor-pointer">
+                <div class="text-6xl mb-4">+</div>
+                <p id="upload">Upload Product Photo</p>
+                <input type="file" id="fileInput" class="absolute inset-0 opacity-0 cursor-pointer" />
+            </label>
+        </div>
+        <form>
+            <div class="mb-2">
+                <input type="text" placeholder="Product Title" class="input input-bordered w-full" id="product-title" />
+            </div>
+            <div class="mb-2">
+                <input type="text" placeholder="Product Description" class="input input-bordered w-full"
+                    id="product-description" />
+            </div>
+            <div class="mb-2">
+                <input type="number" placeholder="Enter Price" class="input input-bordered w-full" id="product-price" />
+            </div>
+            <div class="mb-2">
+                <input type="text" placeholder="Enter Your Name" class="input input-bordered w-full" id="person-name" />
+            </div>
+            <div class="mb-2">
+                <input type="text" placeholder="Enter Your Number" class="input input-bordered w-full"
+                    id="person-number" />
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn bg-[#4C68FF] text-white px-6 py-2 w-full sm:w-auto hover:bg-black"
+                    id="post-now-button">POST NOW</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- For Showing Popup If User Not Put Any Details -->
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">Hello!</h3>
+            <p class="py-4 bold">Please Enter a Required Information For Posting The Add!</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn hover:bg-black hover:text-white">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- For Successfull Posted Ad -->
+    <dialog id="my_modal_2" class="modal">
+        <div class="modal-box">
+            <div class="my-8 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 shrink-0 fill-green-500 inline"
+                    viewBox="0 0 512 512">
+                    <path
+                        d="M383.841 171.838c-7.881-8.31-21.02-8.676-29.343-.775L221.987 296.732l-63.204-64.893c-8.005-8.213-21.13-8.393-29.35-.387-8.213 7.998-8.386 21.137-.388 29.35l77.492 79.561a20.687 20.687 0 0 0 14.869 6.275 20.744 20.744 0 0 0 14.288-5.694l147.373-139.762c8.316-7.888 8.668-21.027.774-29.344z"
+                        data-original="#000000" />
+                    <path
+                        d="M256 0C114.84 0 0 114.84 0 256s114.84 256 256 256 256-114.84 256-256S397.16 0 256 0zm0 470.487c-118.265 0-214.487-96.214-214.487-214.487 0-118.265 96.221-214.487 214.487-214.487 118.272 0 214.487 96.221 214.487 214.487 0 118.272-96.215 214.487-214.487 214.487z"
+                        data-original="#000000" />
+                </svg>
+                <h4 class="text-xl text-gray-800 font-semibold mt-4">Successfully Posted!</h4>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn hover:bg-black hover:text-white">Okay!</button>
+                    <button class="btn hover:bg-black hover:text-white"><a href="../index.html">View Posts</a></button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Javascript -->
+    <script type="module" src="./postAd.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

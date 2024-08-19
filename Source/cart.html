@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <title>Buy And Sell Corner | Cart</title>
+</head>
+
+<body class="flex flex-col min-h-screen mb-12">
+
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 bg-[#4C68FF]">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-[26px] text-white">Buy / Sell Corner</a>
+        </div>
+        <div class="flex-none">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <div class="indicator">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span class="badge badge-sm indicator-item">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="User Avatar"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNa1JGLFIadWHMQ0KvIuKWYGl-cxLwGlI2WA&s"
+                            id="userImage" />
+                    </div>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li class="hover:bg-black hover:text-white"><a href="../index.html">Home</a></li>
+                    <li class="hover:bg-black hover:text-white"><a id="logout-btn">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Cart Items Container -->
+    <div class="cart-items-container px-12 mt-8"></div>
+
+    <!-- Subtotal and Checkout -->
+    <div
+        class="bg-white rounded-3xl border border-gray-500 p-6 flex flex-col md:flex-row items-center justify-between mb-8 mx-12 ">
+        <h5 class="text-xl font-semibold text-gray-900 mb-4 md:mb-0">Subtotal</h5>
+        <div class="flex items-center gap-6">
+            <h6 class="subtotal-amount text-2xl font-bold text-indigo-600">$0</h6>
+        </div>
+    </div>
+    <div class="text-center">
+        <p class="text-gray-500 mb-6">Shipping, taxes, and discounts are calculated at checkout.</p>
+        <button
+            class="bg-indigo-600 text-white rounded-full py-4 px-6 text-lg font-semibold hover:bg-indigo-700 transition-colors">Checkout</button>
+    </div>
+
+    <!-- For Checking User Logged In Or Not -->
+    <dialog id="my_modal_2" class="modal">
+        <div class="modal-box">
+            <div class="my-8 text-center text-[red]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 shrink-0 fill-red-500 inline" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <h4 class="text-xl text-[red] font-semibold mt-4">Please! Login Before Seeing Product Details</h4>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn bg-[red] outline-none w-24 hover:bg-black"><a href="./login.html"
+                            class="text-white">Login</a></button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-lg w-full">
+            <h3 class="text-2xl font-semibold mb-4">Order Summary</h3>
+            <div id="checkoutItems" class="mb-4"></div>
+            <div class="flex justify-between items-center font-semibold text-lg mb-6">
+                <span>Total:</span>
+                <span id="checkoutTotal"></span>
+            </div>
+            <div class="flex justify-end">
+                <button id="closeModal"
+                    class="bg-primary text-white rounded-full py-2 px-4 mr-2 hover:bg-black">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script type="module" src="cart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+
+</html>
+
+
