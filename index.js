@@ -5,6 +5,7 @@ import { auth, db } from "./Source/fbconfig.js";
 const userAvatar = document.querySelector("#userAvatar");
 const userImage = document.querySelector("#userImage");
 
+// Firebase function for checking the user is authenticated or not
 onAuthStateChanged(auth, async (user) => {
     if (user) {
         try {
